@@ -1,6 +1,5 @@
 
 import tkinter as tk  #Imports the Tkinter library and gives it a short name tk
-from tkinter import messagebox #Imports the messagebox feature from Tkinter.
 ***
 Tkinter is used to create GUI applications like:
 Windows
@@ -8,30 +7,39 @@ Buttons
 Labels
 Textboxes
 ***
+from tkinter import messagebox #Imports the messagebox feature from Tkinter.
+***
+Why used from tkinter import messagebox?
+To show popup messages:
+Errors
+Warnings
+Information messages
+***
+
 
 # Main Window 
-root = tk.Tk()
-root.title("Basic Python Programs App")
-root.geometry("500x600")
-root.configure(bg="lightblue")
+root = tk.Tk()    #A blank GUI window appears.
+root.title("Basic Python Programs App") #Sets the title of the window.
+root.geometry("500x600") #Sets the window size.
+root.configure(bg="lightblue")  #Changes background color of the window.
 
 # Title
-label = tk.Label(root, text="Python Mini Projects App", font=("Arial", 20, "bold"), bg="lightblue")
-label.pack(pady=10)
+label = tk.Label(root, text="Python Mini Projects App", font=("Arial", 20, "bold"), bg="lightblue") #Creates a text label.
+label.pack(pady=10) #Displays the label on screen. Pack() Places widget automatically. Pady=10 Adds vertical spacing of 10 pixels.
 
 # Input Field
-entry = tk.Entry(root, font=("Arial", 14))
-entry.pack(pady=10)
+entry = tk.Entry(root, font=("Arial", 14)) #Creates a textbox where user can type.
+entry.pack(pady=10) #Displays textbox on screen.
 
 # Result Label
-result_label = tk.Label(root, text="Result will appear here", font=("Arial", 14), bg="lightblue")
+result_label = tk.Label(root, text="Result will appear here", font=("Arial", 14), bg="lightblue") #Creates another label to display output.
 result_label.pack(pady=10)
 
 # Add Two Numbers
 
 def add_numbers():
     try:
-        nums = entry.get().split()
+        nums = entry.get().split()  #entry.get() Gets text from textbox and Splits text using spaces.
         a = int(nums[0])
         b = int(nums[1])
         result_label.config(text=f"Sum = {a + b}")
@@ -113,7 +121,7 @@ def palindrome():
 
 # Buttons
 
-btn1 = tk.Button(root, text="Add Numbers", width=20, command=add_numbers)
+btn1 = tk.Button(root, text="Add Numbers", width=20, command=add_numbers) #Creates a button.
 btn1.pack(pady=5)
 
 btn2 = tk.Button(root, text="Even / Odd", width=20, command=even_odd)
